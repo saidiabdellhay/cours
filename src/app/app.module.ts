@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { DishService } from './services/dish.service';
 import { LeaderService } from './services/leader.service';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
@@ -38,6 +40,7 @@ import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 
 import { BaseURL } from './shared/baseurl';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -49,13 +52,15 @@ import { BaseURL } from './shared/baseurl';
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    HighlightDirective
   ],
   entryComponents: [
     LoginComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MatFormFieldModule, 
     MatInputModule,
     MatCheckboxModule,
@@ -79,6 +84,7 @@ import { BaseURL } from './shared/baseurl';
   providers: [
     DishService,
     LeaderService,
+    ProcessHTTPMsgService,
     {provide: 'BaseURL', useValue: BaseURL}
   ],
   bootstrap: [AppComponent]
