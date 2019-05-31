@@ -14,7 +14,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSliderModule, MatCheckboxModule } from '@angular/material';
 import { FormsModule } from '@angular/forms'; 
 
 import { MatListModule } from '@angular/material/list';
@@ -70,6 +70,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
+    MatSliderModule,
     AppRoutingModule
   ],
   providers: [
