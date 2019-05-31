@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Inject } from '@angular/core';
 import { Dish } from '../shared/dish';
 import { DishService } from '../services/dish.service';
 
@@ -25,8 +25,8 @@ export class DishdetailComponent implements OnInit {
   d:string = JSON.stringify(new Date().setMilliseconds);
 
   @ViewChild('cform') commentsFormDirective;
-  commentsForm: FormGroup;
   comments: Comment;
+  commentsForm: FormGroup;
 
   formErrors = {
     'author': '',
@@ -49,7 +49,8 @@ export class DishdetailComponent implements OnInit {
     private dishservice: DishService,
     private route: ActivatedRoute,
     private location: Location,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    @Inject('BaseURL') private BaseURL
   ) { 
       this.createForm();
   }
